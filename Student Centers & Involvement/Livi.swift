@@ -1,5 +1,5 @@
 //
-//  SAC.swift
+//  Livi.swift
 //  Student Centers & Involvement
 //
 //  Created by Zeki Oduro on 7/4/17.
@@ -8,32 +8,33 @@
 
 import UIKit
 
-class SAC: UIViewController {
+class Livi: UIViewController {
 
-    
-    let sac = ["CLOSED","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","CLOSED"]
+    let liv = ["CLOSED","8:00am-7:00pm","8:00am-7:00pm","8:00am-7:00pm","8:00am-7:00pm","8:00am-5:00pm","CLOSED"]
     let cs =  ["CLOSED","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","CLOSED"]
-    
-    
-    @IBOutlet weak var todayDate: UILabel!
-    @IBOutlet weak var sacLabel: UILabel!
-    @IBOutlet weak var csLabel: UILabel!
-    
+    let dd =  ["CLOSED","8:00am-2:30pm","8:00am-2:30pm","8:00am-2:30pm","8:00am-2:30pm","8:00am-2:30pm","CLOSED"]
+    let rc =  ["CLOSED","CLOSED","CLOSED","CLOSED","CLOSED","CLOSED","CLOSED"]
+    let rz = ["CLOSED","CLOSED","CLOSED","CLOSED","CLOSED","CLOSED","CLOSED"]
+    let sb = ["CLOSED","CLOSED","CLOSED","CLOSED","CLOSED","CLOSED","CLOSED"]
     
     let date = Date()
     let cal = Calendar.current
-    
-    
-    
+
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var lscLabel: UILabel!
+    @IBOutlet weak var csLabel: UILabel!
+    @IBOutlet weak var ddLabel: UILabel!
+    @IBOutlet weak var rcLabel: UILabel!
+    @IBOutlet weak var rzLabel: UILabel!
+    @IBOutlet weak var sbLabel: UILabel!
     
     
     @IBAction func callInfo(_ sender: UIButton) {
-        UIApplication.shared.open(NSURL(string: "tel://8489321975")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: "tel://8484450405")! as URL, options: [:], completionHandler: nil)
     }
     
-    
     @IBAction func callAdmin(_ sender: UIButton) {
-        UIApplication.shared.open(NSURL(string: "tel://8489328070")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: "tel://8484453561")! as URL, options: [:], completionHandler: nil)
     }
     
     
@@ -43,9 +44,13 @@ class SAC: UIViewController {
         let format = DateFormatter()
         format.dateFormat = "MMMM dd, yyyy"
         let newDate = format.string(from: date)
-        todayDate.text = "Today is \(newDate)"
-        sacLabel.text = sac[weekday]
+        dateLabel.text = "Today is \(newDate)"
+        lscLabel.text = liv[weekday]
         csLabel.text = cs[weekday]
+        ddLabel.text = dd[weekday]
+        rcLabel.text = rc[weekday]
+        rzLabel.text = rz[weekday]
+        sbLabel.text = sb[weekday]
         // Do any additional setup after loading the view.
     }
 

@@ -1,5 +1,5 @@
 //
-//  SAC.swift
+//  CA.swift
 //  Student Centers & Involvement
 //
 //  Created by Zeki Oduro on 7/4/17.
@@ -8,34 +8,39 @@
 
 import UIKit
 
-class SAC: UIViewController {
-
+class CA: UIViewController {
     
-    let sac = ["CLOSED","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","CLOSED"]
-    let cs =  ["CLOSED","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","CLOSED"]
-    
-    
-    @IBOutlet weak var todayDate: UILabel!
-    @IBOutlet weak var sacLabel: UILabel!
-    @IBOutlet weak var csLabel: UILabel!
-    
+    let ca = ["CLOSED","8:00am-7:00pm","8:00am-7:00pm","8:00am-7:00pm","8:00am-7:00pm","8:00am-5:00pm","CLOSED"]
+    let cu = ["CLOSED","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
+    let ger = ["CLOSED","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
+    let kp = ["CLOSED","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
+    let sub = ["CLOSED","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","CLOSED"]
+    let wen = ["CLOSED","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
     
     let date = Date()
     let cal = Calendar.current
+    
+    @IBOutlet weak var todayDate: UILabel!
+    @IBOutlet weak var caLabel: UILabel!
+    @IBOutlet weak var cuLabel: UILabel!
+    @IBOutlet weak var gerLabel: UILabel!
+    @IBOutlet weak var kpLabel: UILabel!
+    @IBOutlet weak var subLabel: UILabel!
+    @IBOutlet weak var wenLabel: UILabel!
+    
+    
     
     
     
     
     
     @IBAction func callInfo(_ sender: UIButton) {
-        UIApplication.shared.open(NSURL(string: "tel://8489321975")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: "tel://8489327724")! as URL, options: [:], completionHandler: nil)
     }
-    
     
     @IBAction func callAdmin(_ sender: UIButton) {
         UIApplication.shared.open(NSURL(string: "tel://8489328070")! as URL, options: [:], completionHandler: nil)
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +49,13 @@ class SAC: UIViewController {
         format.dateFormat = "MMMM dd, yyyy"
         let newDate = format.string(from: date)
         todayDate.text = "Today is \(newDate)"
-        sacLabel.text = sac[weekday]
-        csLabel.text = cs[weekday]
+        caLabel.text = ca[weekday]
+        cuLabel.text = cu[weekday]
+        gerLabel.text = ger[weekday]
+        kpLabel.text = kp[weekday]
+        subLabel.text = sub[weekday]
+        wenLabel.text = wen[weekday]
+
         // Do any additional setup after loading the view.
     }
 

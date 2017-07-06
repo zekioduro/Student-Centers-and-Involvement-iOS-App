@@ -47,7 +47,7 @@ class Doug: UIViewController {
         super.viewDidLoad()
         let weekday = cal.component(.weekday, from: date) - 1
         let format = DateFormatter()
-        format.dateFormat = "MMM dd,yyyy"
+        format.dateFormat = "MMMM dd, yyyy"
         let newDate = format.string(from: date)
         todayDate.text = "Today is \(newDate)"
         dscLabel.text = dsc[weekday]

@@ -1,5 +1,5 @@
 //
-//  SAC.swift
+//  Busch.swift
 //  Student Centers & Involvement
 //
 //  Created by Zeki Oduro on 7/4/17.
@@ -8,32 +8,36 @@
 
 import UIKit
 
-class SAC: UIViewController {
-
-    
-    let sac = ["CLOSED","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","8:00am-5:00pm","CLOSED"]
-    let cs =  ["CLOSED","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","8:00am-4:00pm","CLOSED"]
+class Busch: UIViewController {
     
     
     @IBOutlet weak var todayDate: UILabel!
-    @IBOutlet weak var sacLabel: UILabel!
+    @IBOutlet weak var bscLabel: UILabel!
     @IBOutlet weak var csLabel: UILabel!
+    @IBOutlet weak var gerLabel: UILabel!
+    @IBOutlet weak var moeLabel: UILabel!
+    @IBOutlet weak var siLabel: UILabel!
     
+    
+    
+    
+    
+    
+    let bsc = ["CLOSED","8:00am-7:00pm","8:00am-7:00pm","8:00am-7:00pm","8:00am-7:00pm","8:00am-5:00pm","CLOSED"]
+    let cs = ["CLOSED","8:00am-6:00pm","8:00am-6:00pm","8:00am-6:00pm","8:00am-6:00pm","8:00am-4:00pm","CLOSED"]
+    let ger = ["CLOSED","8:00am-3:00pm","8:00am-6:30pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
+    let moe = ["CLOSED","8:00am-6:30pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
+    let si = ["CLOSED","8:00am-3:00pm","8:00am-3:00pm","8:00am-6:30pm","8:00am-3:00pm","8:00am-3:00pm","CLOSED"]
     
     let date = Date()
     let cal = Calendar.current
     
-    
-    
-    
-    
     @IBAction func callInfo(_ sender: UIButton) {
-        UIApplication.shared.open(NSURL(string: "tel://8489321975")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: "tel://8484454724")! as URL, options: [:], completionHandler: nil)
     }
     
-    
     @IBAction func callAdmin(_ sender: UIButton) {
-        UIApplication.shared.open(NSURL(string: "tel://8489328070")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(NSURL(string: "tel://8484453962")! as URL, options: [:], completionHandler: nil)
     }
     
     
@@ -44,9 +48,12 @@ class SAC: UIViewController {
         format.dateFormat = "MMMM dd, yyyy"
         let newDate = format.string(from: date)
         todayDate.text = "Today is \(newDate)"
-        sacLabel.text = sac[weekday]
+        bscLabel.text = bsc[weekday]
         csLabel.text = cs[weekday]
-        // Do any additional setup after loading the view.
+        gerLabel.text = ger[weekday]
+        moeLabel.text = moe[weekday]
+        siLabel.text = si[weekday]
+        
     }
 
     override func didReceiveMemoryWarning() {
